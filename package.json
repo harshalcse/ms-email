@@ -1,0 +1,90 @@
+{
+  "name": "ms-email",
+  "version": "5.5.0",
+  "description": "email service",
+  "engines": {
+    "node": "=10.16.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --verbose",
+    "test:cov": "npm run test -- --coverage",
+    "test:watch": "npm run test -- --watch",
+    "prestart": "tsc",
+    "watch-ts": "tsc -w",
+    "lint": "eslint ./src/**/*.ts",
+    "watch-node": "nodemon dist/src/server.js",
+    "dev:watch": "nodemon --watch src -e ts --exec npm run start",
+    "dev:debug": "nodemon --inspect src/server.ts",
+    "start": "node dist/src/server.js",
+    "build": "tsc",
+    "scheduler:dev": "nodemon --exec ts-node -- scheduler/index.ts",
+    "release": "standard-version"
+  },
+  "keywords": [
+    "Boilerplate"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test:cov"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "author": "DK",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/good": "^8.2.0",
+    "@hapi/hapi": "^18.4.1",
+    "@hapi/inert": "^5.2.1",
+    "@hapi/joi": "15.1.0",
+    "@hapi/vision": "^5.5.2",
+    "hapi-swagger": "^10.0.2",
+    "joi-extract-type": "^15.0.0",
+    "lodash": "^4.17.19",
+    "moment": "^2.24.0",
+    "mongoose": "5.13.0",
+    "migrate-mongo": "^6.0.2",
+    "reflect-metadata": "^0.1.13",
+    "moment-timezone": "^0.5.28"
+  },
+  "devDependencies": {
+    "@types/ali-oss": "^6.0.5",
+    "@types/glob": "^7.1.1",
+    "@types/hapi": "^18.0.2",
+    "@types/hapi__inert": "^5.2.0",
+    "@types/hapi__joi": "^15.0.2",
+    "@types/hapi__vision": "^5.5.0",
+    "@types/jest": "^24.0.15",
+    "@types/lodash": "^4.14.136",
+    "@types/mongodb": "^3.1.28",
+    "@types/nconf": "^0.10.0",
+    "@types/node": "^14.14.9",
+    "@types/uuid": "^3.4.6",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.7.0",
+    "jest": "^24.8.0",
+    "jest-date-mock": "^1.0.7",
+    "lint-staged": "^8.2.1",
+    "mongodb-memory-server": "^5.1.5",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "sonarqube-scanner": "2.5.0",
+    "standard-version": "^7.1.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.7.2"
+  }
+}

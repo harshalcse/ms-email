@@ -1,0 +1,9 @@
+{
+  "MONGO_URI": "mongodb://localhost:27017/hapi_db",
+  "db": {
+    "database": "./data/local.sqlite",
+    "type": "sqlite",
+    "migrations": ["migrations/**/*.ts"],
+    "synchronize": true
+  }
+}

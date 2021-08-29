@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  mongo:
+    image: mongo:4.1.13
+    container_name: mongo.dev
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: award_db
+      MONGO_NON_ROOT_USERNAME: root
+      MONGO_NON_ROOT_PASSWORD: root
+
+    networks:
+       - digital_bank  
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo/data:/data/db
+      - ./scripts/mongo.init:/docker-entrypoint-initdb.d
+  ms_seed:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app 
+    container_name: ms.award
+    restart: always
+    environment:
+      NODE_ENV: "dev"
+    networks:
+       - digital_bank  
+    ports:
+      - "8080:8080"
+    command: npm run dev:watch
+    depends_on:
+      - mongo
+
+networks:
+  digital_bank:
