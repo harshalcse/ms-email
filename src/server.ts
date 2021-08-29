@@ -7,7 +7,7 @@ import errorHandler from './common/handleValidationErrors';
 import Swagger from './plugins/swagger';
 import { routes } from './routes';
 
-const { port, host } = { port: '8080', host: 'localhost' }
+const { port, host } = { port: '8080', host: 'localhost' };
 
 // interface processExit {
 //   onFinished(callback: () => void): void;
@@ -27,11 +27,7 @@ const createServer = async () => {
     }
   });
 
-  const plugins: any[] = [
-    Inert,
-    Vision,
-    Swagger
-  ];
+  const plugins: any[] = [Inert, Vision, Swagger];
   await server.register(plugins);
 
   // Register routes
@@ -59,9 +55,10 @@ export const start = async (module: NodeModule) => {
       await server.start();
     } catch (err) {
       console.log('Server cannot start', err);
+      process.exit(1);
       // const logger : processExit;
       // logger.onFinished(() => {
-      //   process.exit(1);
+      //   
       // });
     }
   }

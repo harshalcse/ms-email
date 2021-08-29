@@ -33,12 +33,12 @@ const errorHandler: hapi.Lifecycle.Method = (
           code: errorCode,
           key: `${detail.path[0]}`
         });
-
         return acc;
       },
       []
     );
-    throw new AppError(ERROR_CODE.INVALID_REQUEST, mappedDetails);
+    const errorDetails = new AppError(ERROR_CODE.INVALID_REQUEST, mappedDetails);
+    return errorDetails;
   }
 
   throw err;

@@ -1,6 +1,5 @@
 import { connect, connection } from 'mongoose';
 
-
 export const MONGO_USER_PARAM = 'MONGO_USER';
 export const MONGO_PASS_PARAM = 'MONGO_PASS';
 export const MONGO_DB_NAME = 'MONGO_DB_NAME';

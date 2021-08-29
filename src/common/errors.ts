@@ -1,9 +1,5 @@
-
 enum ERROR_CODE {
   INVALID_MANDATORY_FIELDS = 'INVALID_MANDATORY_FIELDS',
-  MULTIPLE_CODE_CHECK = 'MULTIPLE_CODE_CHECK',
-  USER_AGE_NOT_VALID = 'USER_AGE_NOT_VALID',
-  USER_NAME_EXISTED = 'USER_NAME_EXISTED',
   INCORRECT_EMAIL_FORMAT = 'INCORRECT_EMAIL_FORMAT',
   INCORRECT_FIELD = 'INCORRECT_FIELD',
   INVALID_REQUEST = 'INVALID_REQUEST',
@@ -19,48 +15,36 @@ const JoiValidationErrors = {
 };
 
 const ErrorList = {
-  [ERROR_CODE.USER_AGE_NOT_VALID]: {
-    statusCode: '400',
-    message: 'sth'
-  },
-  [ERROR_CODE.USER_NAME_EXISTED]: {
-    statusCode: '400',
-    message: "User's name already existed"
-  },
   [ERROR_CODE.INCORRECT_EMAIL_FORMAT]: {
-    statusCode: '400',
+    statusCode: 400,
     message: 'Incorrect email format'
   },
   [ERROR_CODE.INCORRECT_FIELD]: {
-    statusCode: '400',
+    statusCode: 400,
     message: 'Incorrect field value, data type or length'
   },
   [ERROR_CODE.INVALID_REQUEST]: {
-    statusCode: '400',
+    statusCode: 400,
     message: 'Invalid request'
   },
   [ERROR_CODE.UNEXPECTED_ERROR]: {
-    statusCode: '500',
+    statusCode: 500,
     message: 'We caught unexpected error'
   },
   [ERROR_CODE.INVALID_REGISTER_PARAMETER]: {
-    statusCode: '400',
+    statusCode: 400,
     message: 'Invalid parameter setting'
   },
-  [ERROR_CODE.MULTIPLE_CODE_CHECK]: {
-    statusCode: '400',
-    message: 'More than one usage code is used'
-  },
   [ERROR_CODE.INVALID_MANDATORY_FIELDS]: {
-    statusCode: '400',
+    statusCode: 400,
     message: 'Required field cannot be empty'
   },
   [ERROR_CODE.UNAUTHORIZED]: {
-    statusCode: '401',
+    statusCode: 401,
     message: 'User do not have permission to perform action'
   },
   [ERROR_CODE.RESOURCE_NOT_FOUND]: {
-    statusCode: '400',
+    statusCode: 400,
     message: 'Resource not found'
   }
 };
