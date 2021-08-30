@@ -1,17 +1,11 @@
 import hapi from '@hapi/hapi';
 import * as Inert from '@hapi/inert';
 import * as Vision from '@hapi/vision';
-
-import { connectMongo } from './common/mongoDb';
 import errorHandler from './common/handleValidationErrors';
 import Swagger from './plugins/swagger';
 import { routes } from './routes';
 
 const { port, host } = { port: '8080', host: 'localhost' };
-
-// interface processExit {
-//   onFinished(callback: () => void): void;
-// }
 
 const createServer = async () => {
   const server = new hapi.Server({
@@ -37,7 +31,6 @@ const createServer = async () => {
 };
 
 export const init = async () => {
-  await connectMongo();
   const server = await createServer();
   await server
     .initialize()
@@ -56,10 +49,6 @@ export const start = async (module: NodeModule) => {
     } catch (err) {
       console.log('Server cannot start', err);
       process.exit(1);
-      // const logger : processExit;
-      // logger.onFinished(() => {
-      //   
-      // });
     }
   }
 };

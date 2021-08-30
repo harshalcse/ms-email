@@ -37,7 +37,10 @@ const errorHandler: hapi.Lifecycle.Method = (
       },
       []
     );
-    const errorDetails = new AppError(ERROR_CODE.INVALID_REQUEST, mappedDetails);
+    const errorDetails = new AppError(
+      ERROR_CODE.INVALID_REQUEST,
+      mappedDetails
+    );
     return errorDetails;
   }
 

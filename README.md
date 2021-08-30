@@ -50,21 +50,6 @@ The following are module dependecies:
 ### Optional
 - LOG_FILE: path to log file, default console log
 
-## Working with TypeORM migration script
-
-Migration scritps are developed in TypeScript and located at `migrations` folder.
-
-Steps to create migration script
-
-Create migration script
-```bash
-npx typeorm migration:create -n <Migration class name>
-```
-
-Run migration script
-```bash
-host=<db-host> port=<db-port> username=<username> password=<pwd> npm run migrate
-```
 
 ## Misc
 
