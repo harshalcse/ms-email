@@ -40,12 +40,9 @@ Whenever there is a commit, there will be check on lint, on failure commit fails
 ### Pre push
 Whenever there is a push, there will be check on test.
 
-## Internal Module dependencies
-The following are module dependecies:
-- module-logger: for all the logging
-- module-http: for making http calls
 
 ## ENV variables
+- DEV: it is accessible throughout application
 
 ### Optional
 - LOG_FILE: path to log file, default console log
