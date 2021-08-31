@@ -63,10 +63,6 @@
   ],
   "include": [
     "src/**/*.ts",
-    "migrations/**/*.ts",
-    "migrations/*.js",
-    "*mongo-config.js",
     "configs/**/*.json",
-    "scheduler/**/*.ts"
   ]
 }
