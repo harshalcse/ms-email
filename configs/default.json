@@ -1,8 +1,5 @@
 {
-  "MONGO_DB_NAME": "award_db",
-  "MONGO_USER": "award",
-  "MONGO_HOSTS": ["localhost:27017"],
-  "serviceName": "ms-award",
+  "serviceName": "ms-email",
   "server": {
     "host": "0.0.0.0",
     "port": 8080
