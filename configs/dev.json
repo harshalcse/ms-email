@@ -1,6 +1,0 @@
-{
-  "MONGO_DB_NAME": "award_db",
-  "MONGO_USER": "award",
-  "MONGO_HOSTS": ["dev-lfs-app-mongo-tgq-pri.rn1dw.mongodb.net"],
-  "serviceName": "ms-award"
-}
